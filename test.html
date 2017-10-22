@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>
+    Test
+  </title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+  function styleFromCookie(){
+      var color = getCookie('color');
+      if (color != null && color != ''){
+
+         restyle(color);
+      }
+  }
+
+  function styleToCookie(color){
+      setCookie('color',color);
+      restyle(color);
+  }
+
+  function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  }
+
+  function setCookie(cname, cvalue) {
+      var exdays = 30;
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function restyle(color) {
+
+    var bannerColor;
+    var menuColor;
+    var hoverClass;
+    var headlineColor;
+    var articleColor;
+
+    if (color == 'green'){
+      menuColor = "#669999";
+      bannerColor = "#3d5c5c";
+      headlineColor = "#669999";
+      articleColor = "#c2d6d6";
+      hoverClass = 'newhover menuItem';
+    }
+    else{
+      menuColor = "#993300";
+      bannerColor = "#662200";
+      headlineColor = "#993300";
+      articleColor = "#ffddcc";
+      hoverClass = 'redhover menuItem';
+    }
+
+    var headlines = document.getElementsByClassName('headline');
+    var articles = document.getElementsByClassName('article');
+    var menu = document.getElementsByClassName("menu");
+    var banner = document.getElementsByClassName("banner");
+    var menuItems = document.getElementsByClassName("menuItem");
+
+    menu[0].style.background=menuColor;
+    banner[0].style.background=bannerColor;
+
+    var i;
+    for (i = 0; i < menuItems.length; i++){
+       menuItems[i].className=hoverClass;
+    }
+
+    for (i = 0; i < headlines.length; i++){
+       headlines[i].style.background=headlineColor;
+       headlines[i].style.color="white";
+       articles[i].style.background=articleColor;
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="banner">
+    <h1>Addictive Games to Play</a></h1>
+  </div>
+  <div class="menuDiv">
+    <ul class="menu">
+      <li class="menuItem dropdown">
+        <a href="javascript:void(0)" class="dropbtn">FOr Lazy Heads</a>
+        <div class="dropdown-content">
+          <a href="#seven">Down</a>
+          <a href="#one">Up</a>
+        </div>
+        <li class="menuItem" id=yes>
+          <a href="">Default</a>
+        </li>
+      </li>
+  </div>
+  <div class="article">    <a name="one"></a>
+    <div class="text">
+      <img src="unnamed.png">
+      <h3><a name="one">Dumb Ways to Die</h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+      <button type="button" id=button2><a href="https://itunes.apple.com/us/app/dumb-ways-to-die/id639930688?mt=8">GET IT NOW!</a></button>
+      <button type="button"><a href="https://play.google.com/store/apps/details?id=com.popreach.dumbways&hl=en">GET IT NOW!</a></button>
+      <p>Enjoy 43 hilarious mini-games as you attempt to collect all the charmingly dumb characters for your train station, achieve high scores and unlock the famous music video that started it all.
+      </p>
+    </div>
+  </div>
+  <div class="article">
+    <div class="text">
+      <img src="color.png" id=first></img>
+      <h3>Color Switch</h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+      <button type="button" id=button2><a href="https://itunes.apple.com/us/app/color-switch/id1053533457?mt=8">GET IT NOW!</a></button>
+      <button type="button"><a href="https://play.google.com/store/apps/details?id=com.fortafygames.colorswitch&hl=en">GET IT NOW!</a></button>
+      <p>Play now the #1 addictive game of the year!
+
+Tap the ball carefully through each obstacle and your ball will switch color with some powerups.
+You must follow the color pattern on each obstacle to cross it !
+
+Be careful not to pass through the wrong color, or you’ll have to start again.</p>
+    </div>
+  </div>
+  <div class="article">
+    <div class="text" id=rachel>
+      <img src="aa.png">
+      <h3>Alto's Adventure</h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+        <button type="button" id=button2><a href="https://itunes.apple.com/us/app/altos-adventure/id950812012?mt=8">GET IT NOW!</a></button>
+        <button type="button"><a href="https://play.google.com/store/apps/details?id=com.noodlecake.altosadventure&hl=en">GET IT NOW!</a></button>
+        <p>Join Alto and his friends as they embark on an endless snowboarding odyssey. Journey across the beautiful alpine hills of their native wilderness, through neighbouring villages, ancient woodlands, and long-abandoned ruins.
+        </p>
+    </div>
+  </div>
+  <div class="article">
+    <div class="text">
+      <img src="cr.png" id=sp>
+      <h3>Clash Royale</h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+      <button type="button" id=button2><a href="https://itunes.apple.com/us/app/clash-royale/id1053012308?mt=8">GET IT NOW!</a></button>
+      <button type="button"><a href="https://play.google.com/store/apps/details?id=com.supercell.clashroyale&hl=en">GET IT NOW!</a></button>
+      <p>Enter the Arena! From the creators of Clash of Clans comes a real-time multiplayer game starring the Royales, your favorite Clash characters and much, much more.
+      </p>
+    </div>
+  </div>
+  <div class="article">
+    <div class="text">
+      <img src="ccs.png" id=sp>
+      <h3>Candy Crush</h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+      <button type="button" id=button2><a href="https://itunes.apple.com/us/app/candy-crush-saga/id553834731?mt=8">GET IT NOW!</a></button>
+      <button type="button"><a href="https://play.google.com/store/apps/details?id=com.king.candycrushsaga&hl=en">GET IT NOW!</a></button>
+      <p>Join Tiffi and Mr. Toffee on their sweet adventure through the Candy Kingdom. Travel through magical lands, visiting wondrous places and meeting deliciously kooky characters! Switch and match your way through hundreds of fun levels in this delicious puzzle adventure. The sweetest game just keeps getting sweeter!
+      </p>
+    </div>
+  </div>
+  <div class="article">
+    <div class="text">
+      <img src="mc.png" id=sp>
+      <h3>Minecraft</h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+      <button type="button" id=button2><a href="https://itunes.apple.com/za/app/minecraft/id479516143?mt=8">GET IT NOW!</a></button>
+      <button type="button"><a href="https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&hl=en">GET IT NOW!</a></button>
+      <p>Explore randomly generated worlds and build amazing things from the simplest of homes to the grandest of castles. Play in creative mode with unlimited resources or mine deep into the world in survival mode, crafting weapons and armor to fend off the dangerous mobs.
+      </p>
+    </div>
+  </div>
+  <div class="article">
+    <div class="text">
+      <img src="svw.png" id=sp>
+      <h3><a name="four">Snake Vs Block</a></h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+      <button type="button" id=button2><a href="https://itunes.apple.com/us/app/snake-vs-block/id1233739175?mt=8">GET IT NOW!</a></button>
+      <button type="button"><a href="https://play.google.com/store/apps/details?id=com.bentostudio.ballsvsblocks&hl=en">GET IT NOW!</a></button>
+      <p>Swipe your finger to guide a snake of balls and break the bricks.
+Try to break as many bricks as possible.
+Get additional balls and make the biggest snake ever!
+Very easy to play but very hard to reach high scores!
+
+Game Features:
+- Free to play
+- Endless gameplay
+- Simple swipe control
+- Challenge your friends with the best highscore
+      </p>
+    </div>
+  </div>
+  <div class="article">
+    <div class="text">
+      <img src="8bp.png" id=sp>
+      <h3><a name="five">8 Ball Pool</a></h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+      <button type="button" id=button2><a href="https://itunes.apple.com/us/app/8-ball-pool/id543186831?mt=8">GET IT NOW!</a></button>
+      <button type="button"><a href="https://play.google.com/store/apps/details?id=com.miniclip.eightballpool&hl=en">GET IT NOW!</a></button>
+      <p>Play with friends! Play with Legends. Play the hit Miniclip 8 Ball Pool game on your mobile and become the best!
+COMPETE 1-ON-1 OR IN 8 PLAYER TOURNAMENT!
+Refine your skills in the practice arena, take on the world in 1-vs-1 matches, or enter tournaments to win trophies and exclusive cues!
+      </p>
+    </div>
+  </div>
+  <div class="article">
+    <div class="text">
+      <img src="ss.png" id=sp>
+      <h3><a name="six">Subway Surfers</a></h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+      <button type="button" id=button2><a href="https://itunes.apple.com/us/app/subway-surfers/id512939461?mt=8">GET IT NOW!</a></button>
+      <button type="button"><a href="https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf&hl=en">GET IT NOW!</a></button>
+      <p>DASH as fast as you can!
+DODGE the oncoming trains!
+Help Jake, Tricky and Fresh escape from the grumpy Inspector and his dog.
+Join the most daring chase!
+A Universal App with HD optimized graphics.
+      </p>
+    </div>
+  </div>
+  <div class="article">
+    <div class="text">
+      <img src="si.png" id=sp3>
+      <h3><a name="seven">Slither.io</a></h3>
+      <i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i><i class="fa fa-trash"></i></i><i class="fa fa-trash"></i>
+      <button type="button" id=button2><a href="https://itunes.apple.com/us/app/slither-io/id1091944550?mt=8">GET IT NOW!</a></button>
+      <button type="button"><a href="https://play.google.com/store/apps/details?id=air.com.hypah.io.slither&hl=en">GET IT NOW!</a></button>
+      <p>Play against other people online! Can you become the longest player?
+
+If your head touches another player, you will explode and then it's game over. But if others run into YOU, then THEY will explode, and you can eat their remains!
+
+In slither.io, you have a chance to win even if you're tiny. You can swerve in front of a much larger player to defeat them, no matter how big you are!
+      </p>
+    </div>
+  </div>
+  <div class="animateButton"><img src="cha.png" onclick="javascript:restyle('green');" id=special></div>
+</body>
+</html>
